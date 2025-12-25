@@ -1,28 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Item = (props) => {
+const Item = ({ id, image, name, new_price, old_price }) => {
   return (
-    <div className="w-[200px] border border-black rounded-2xl overflow-hidden transform transition duration-500 hover:scale-110">
-      <Link to={`/product/${props.id}`}>
-        <img
-          src={props.image}
-          alt={props.name}
-          onClick={() => window.scrollTo(0, 0)}
-          className="w-[200px] rounded-t-2xl"
-        />
+    <div className="group rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-sm transition transform hover:-translate-y-1 hover:shadow-lg">
+      <Link to={`/product/${id}`} onClick={() => window.scrollTo(0, 0)}>
+        <div className="aspect-[3/4] overflow-hidden bg-gray-50">
+          <img
+            src={image}
+            alt={name}
+            className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+          />
+        </div>
       </Link>
 
-      <p className="my-1 mx-2">{props.name}</p>
+      <div className="px-3 pb-3 pt-2">
+        <p className="text-sm font-medium text-gray-900 line-clamp-2">
+          {name}
+        </p>
 
-      <div className="flex gap-5 pb-3">
-        <span className="pl-2 text-[#374151] text-base font-semibold">
-          ${props.new_price}
-        </span>
-
-        <span className="text-[#8c8c8c] text-base font-medium line-through">
-          ${props.old_price}
-        </span>
+        <div className="mt-2 flex items-center gap-3">
+          <span className="text-base font-semibold text-gray-900">
+            ${new_price}
+          </span>
+          <span className="text-sm font-medium text-gray-400 line-through">
+            ${old_price}
+          </span>
+        </div>
       </div>
     </div>
   );
