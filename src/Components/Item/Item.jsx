@@ -1,22 +1,31 @@
-import React from 'react'
-import "./Item.css"
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
+
 const Item = (props) => {
   return (
-    <div className='item'>
-       <Link to={`/product/${props.id}`}
-       > <img  onClick={window.scrollTo(0,0)}src={props.image} alt="" /></Link>
-        <p>{props.name}</p>
-        <div className='item-prices'>
-            <div className="item-price-new">
-                ${props.new_price}
-            </div>
-            <div className="item-price-old">
-                {props.old_price}
-            </div>
-        </div>
-    </div>
-  )
-}
+    <div className="w-[200px] border border-black rounded-2xl overflow-hidden transform transition duration-500 hover:scale-110">
+      <Link to={`/product/${props.id}`}>
+        <img
+          src={props.image}
+          alt={props.name}
+          onClick={() => window.scrollTo(0, 0)}
+          className="w-[200px] rounded-t-2xl"
+        />
+      </Link>
 
-export default Item
+      <p className="my-1 mx-2">{props.name}</p>
+
+      <div className="flex gap-5 pb-3">
+        <span className="pl-2 text-[#374151] text-base font-semibold">
+          ${props.new_price}
+        </span>
+
+        <span className="text-[#8c8c8c] text-base font-medium line-through">
+          ${props.old_price}
+        </span>
+      </div>
+    </div>
+  );
+};
+
+export default Item;
