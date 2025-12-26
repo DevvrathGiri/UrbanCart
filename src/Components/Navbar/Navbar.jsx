@@ -21,7 +21,7 @@ const Navbar = () => {
 
   return (
     // same gradient as body + blur so navbar body se attached lage
-    <header className="sticky top-0 z-30 border-b border-white/20 bg-gradient-to-r from-[#8af3c4]/70 via-[#76f0c1]/70 to-[#6de6ff]/70 backdrop-blur-xl">
+    <header className=" top-0 z-30 border-b border-white/20 bg-gradient-to-r from-[#8af3c4]/70 via-[#76f0c1]/70 to-[#6de6ff]/70 backdrop-blur-xl">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-8 py-5 scale-120">
         {/* Logo section */}
         <Link

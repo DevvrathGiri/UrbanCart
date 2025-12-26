@@ -20,24 +20,32 @@ const Footer = () => {
           </div>
 
           {/* Links */}
-          <nav className="flex flex-wrap gap-4 md:gap-8 text-sm font-medium text-gray-600">
-            <Link to="/About" ><button className="hover:text-gray-900 transition-colors">
-              About
-            </button></Link>
-            
-            <button className="hover:text-gray-900 transition-colors">
-              Products
-            </button>
-            <button className="hover:text-gray-900 transition-colors">
-              Offices
-            </button>
-            <button className="hover:text-gray-900 transition-colors">
-              Company
-            </button>
-            <button className="hover:text-gray-900 transition-colors">
-              Contact
-            </button>
-          </nav>
+         <nav className="flex flex-wrap gap-4 md:gap-8 text-sm font-medium text-gray-600">
+  <Link to="/about">
+    <button className="hover:text-gray-900 transition-colors">
+      About
+    </button>
+  </Link>
+
+  <Link to="/offices">
+    <button className="hover:text-gray-900 transition-colors">
+      Offices
+    </button>
+  </Link>
+
+  <Link to="/company">
+    <button className="hover:text-gray-900 transition-colors">
+      Company
+    </button>
+  </Link>
+
+  <Link to="/contact">
+    <button className="hover:text-gray-900 transition-colors">
+      Contact
+    </button>
+  </Link>
+</nav>
+
 
           {/* Social */}
           <div className="flex items-center gap-3">
