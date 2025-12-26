@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../../assets/logo.webp";
+import {Link} from "react-router-dom"
 import instagram_icon from "../../assets/instagram.png";
 import facebook_icon from "../../assets/facebook.png";
 import whatsapp_icon from "../../assets/whatsapp.png";
@@ -14,15 +15,16 @@ const Footer = () => {
           <div className="flex items-center gap-3">
             <img src={logo} alt="logo" className="h-9 w-auto" />
             <span className="text-2xl md:text-3xl font-bold text-gray-900">
-              Shopify
+              UrbanCart
             </span>
           </div>
 
           {/* Links */}
           <nav className="flex flex-wrap gap-4 md:gap-8 text-sm font-medium text-gray-600">
-            <button className="hover:text-gray-900 transition-colors">
+            <Link to="/About" ><button className="hover:text-gray-900 transition-colors">
               About
-            </button>
+            </button></Link>
+            
             <button className="hover:text-gray-900 transition-colors">
               Products
             </button>
@@ -60,7 +62,7 @@ const Footer = () => {
         {/* Divider & bottom */}
         <div className="mt-8 border-t border-gray-200 pt-5 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <p className="text-xs text-gray-500">
-            © 2023 Shopify. All rights reserved.
+            © 2025 UrbanCart. All rights reserved.
           </p>
 
           <div className="flex flex-wrap gap-4 text-xs text-gray-500">

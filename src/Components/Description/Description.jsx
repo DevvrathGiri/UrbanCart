@@ -6,97 +6,100 @@ const Description = () => {
   return (
     <section className="max-w-5xl mx-auto my-16 px-4">
       {/* Tabs */}
-      <div className="flex border-b border-gray-200">
+      <div className="flex items-center gap-2 border-b border-gray-200">
         <button
           type="button"
           onClick={() => setActiveTab("description")}
-          className={`px-6 py-3 text-sm font-semibold transition-colors ${
-            activeTab === "description"
-              ? "border-b-2 border-gray-900 text-gray-900"
-              : "text-gray-500 hover:text-gray-800"
-          }`}
+          className={`relative px-5 py-3 text-sm font-semibold transition-colors
+            ${
+              activeTab === "description"
+                ? "text-gray-900"
+                : "text-gray-500 hover:text-gray-800"
+            }`}
         >
           Description
+          {activeTab === "description" && (
+            <span className="absolute inset-x-0 -bottom-[1px] h-0.5 rounded-full bg-gray-900" />
+          )}
         </button>
 
         <button
           type="button"
           onClick={() => setActiveTab("reviews")}
-          className={`px-6 py-3 text-sm font-semibold transition-colors ${
-            activeTab === "reviews"
-              ? "border-b-2 border-gray-900 text-gray-900"
-              : "text-gray-500 hover:text-gray-800"
-          }`}
+          className={`relative px-5 py-3 text-sm font-semibold transition-colors
+            ${
+              activeTab === "reviews"
+                ? "text-gray-900"
+                : "text-gray-500 hover:text-gray-800"
+            }`}
         >
           Reviews (135)
+          {activeTab === "reviews" && (
+            <span className="absolute inset-x-0 -bottom-[1px] h-0.5 rounded-full bg-gray-900" />
+          )}
         </button>
       </div>
 
       {/* Content */}
-      <div className="border border-gray-200 border-t-0 rounded-b-lg bg-white p-6 md:p-8 text-sm leading-relaxed text-gray-700">
+      <div className="rounded-b-2xl border border-t-0 border-gray-200 bg-gray-50/70 p-6 md:p-8 text-sm leading-relaxed text-gray-700">
         {activeTab === "description" && (
-          <div className="space-y-4">
+          <div className="space-y-3 md:space-y-4">
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Praesentium reiciendis exercitationem amet totam nisi ullam
-              cumque fugit magnam laudantium. Quis eos quam alias nisi
-              explicabo ut, itaque qui fuga officiis.
+              Crafted from soft, breathable fabric designed for all‑day comfort,
+              this piece keeps you cool while maintaining a clean, modern look.
             </p>
             <p>
-              Maxime labore in molestiae, debitis vel, rem modi repudiandae
-              ullam ipsam delectus dolores quibusdam reiciendis, hic temporibus
-              beatae at aut possimus reprehenderit.
+              The relaxed fit gives you easy movement, while the precise
+              stitching and premium feel make it suitable for daily wear or
+              weekend outings.
             </p>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed
-              doloremque facilis neque non nihil quam veritatis a. Ratione
-              dolore debitis quia possimus natus quo consequatur
-              exercitationem quae unde, laboriosam iure!
+              Pair it with jeans, joggers, or shorts to create effortless
+              everyday outfits that feel as good as they look.
             </p>
           </div>
         )}
 
         {activeTab === "reviews" && (
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
+          <div className="space-y-5">
+            {/* Header + CTA */}
+            <div className="flex flex-wrap items-center justify-between gap-3">
               <div>
                 <p className="text-base font-semibold text-gray-900">
-                  Customer Reviews
+                  Customer reviews
                 </p>
                 <p className="text-xs text-gray-500">
                   4.5 out of 5 · Based on 135 reviews
                 </p>
               </div>
-              <button className="rounded-md bg-gray-900 px-4 py-2 text-xs font-semibold text-white hover:bg-black transition">
+              <button className="rounded-full bg-gray-900 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-black transition">
                 Write a review
               </button>
             </div>
 
-            {/* Placeholder review list */}
-            <div className="border-t border-gray-200 pt-4 space-y-4">
-              <div>
-                <p className="text-sm font-semibold text-gray-900">
-                  John Doe
-                </p>
-                <p className="text-xs text-gray-500 mb-1">
-                  ★★★★☆ · 2 days ago
-                </p>
-                <p className="text-sm text-gray-700">
-                  Great product, quality is better than expected. Shipping was
-                  also fast.
+            {/* Reviews list */}
+            <div className="space-y-4 border-t border-gray-200 pt-4 text-sm">
+              <div className="space-y-1">
+                <div className="flex items-center justify-between">
+                  <p className="font-semibold text-gray-900">John Doe</p>
+                  <span className="text-xs text-gray-500">★★★★☆ · 2 days ago</span>
+                </div>
+                <p className="text-gray-700">
+                  Great product, quality is better than expected and the fit is
+                  perfect. Shipping was also fast.
                 </p>
               </div>
 
-              <div className="border-t border-gray-200 pt-4">
-                <p className="text-sm font-semibold text-gray-900">
-                  Jane Smith
-                </p>
-                <p className="text-xs text-gray-500 mb-1">
-                  ★★★★★ · 1 week ago
-                </p>
-                <p className="text-sm text-gray-700">
-                  Very comfortable and looks exactly like the photos.
-                  Definitely recommend.
+              <div className="space-y-1 border-t border-gray-200 pt-4">
+                <div className="flex items-center justify-between">
+                  <p className="font-semibold text-gray-900">Jane Smith</p>
+                  <span className="text-xs text-gray-500">
+                    ★★★★★ · 1 week ago
+                  </span>
+                </div>
+                <p className="text-gray-700">
+                  Very comfortable and looks exactly like the photos. Definitely
+                  recommend for everyday wear.
                 </p>
               </div>
             </div>
