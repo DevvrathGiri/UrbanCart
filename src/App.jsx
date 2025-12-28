@@ -13,6 +13,8 @@ import About from "./Components/About/About"
 import Offices from "./Components/Offices/Offices"
 import Contact from "./Components/Contact/Contact"
 import Company from "./Components/Company/Company"
+import Payment from "./Components/Payment/Payment"
+
 function App() {
  
   return (
@@ -32,6 +34,7 @@ function App() {
         <Route path="/Offices" element={<Offices/>}/>
         <Route path="/Company" element={<Company/>}/>
         <Route path="/Contact" element={<Contact/>}/>
+        <Route path="/payment" element={<Payment/>}/>
       </Routes>
       <Footer/>
       </BrowserRouter>

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import remove_icon from "../../assets/remove.webp";
 import { ShopContext } from "../../Context/ShopContext";
+import {Link} from "react-router-dom";
 
 const CartItems = () => {
   const { getTotalCartAmount, all_product, cartItems, removeFromCart } =
@@ -142,10 +143,12 @@ const CartItems = () => {
                 <span>${total}</span>
               </div>
             </div>
-
-            <button className="mt-3 w-full rounded-full bg-[#ff4141] px-6 py-3 text-sm font-semibold text-white shadow-md hover:bg-[#ff2626] hover:shadow-lg transition">
+            <Link to="/payment" > 
+              <button className="mt-3 w-full rounded-full bg-[#ff4141] px-6 py-3 text-sm font-semibold text-white shadow-md hover:bg-[#ff2626] hover:shadow-lg transition">
               Proceed to checkout
             </button>
+            </Link>
+          
           </div>
 
           {/* Promo code */}
